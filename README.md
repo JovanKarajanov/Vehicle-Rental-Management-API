@@ -9,6 +9,7 @@ This is a vehicle rental management system developed using Spring Boot and Postg
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL
+- Postman (For API testing)
 
 </details>
 <details>
@@ -76,15 +77,39 @@ Project Structure
 
 The following API endpoints are available:
 
-- GET /vehicles: Retrieves all vehicles.
-- GET /vehicles/{id}: Retrieves a vehicle by ID.
-- GET /vehicles/make/{make}: Retrieves vehicles by make.
-- GET /vehicles/model/{model}: Retrieves vehicles by model.
-- GET /vehicles/year/{year}: Retrieves vehicles by year.
-- POST /vehicles: Creates a new vehicle.
+- GET: Retrieves all vehicles.
+    ```bash
+    http://localhost:8080/vehicles
+    ```
+- GET : Retrieves a vehicle by ID.
+    ```bash
+    http://localhost:8080/vehicles/{{id}}
+    ```
+- GET : Retrieves vehicles by make.
+    ```bash
+    http://localhost:8080/vehicles/make/{{make}}
+    ```
+- GET : Retrieves vehicles by model.
+    ```bash
+    http://localhost:8080/vehicles/model/{{model}}
+    ```
+- GET : Retrieves vehicles by year.
+    ```bash
+    http://localhost:8080/vehicles/year/{{year}}
+    ```
+- POST : Creates a new vehicle.
+    ```bash
+    http://localhost:8080/vehicles/vehicles/post
+    ```
 - PUT /vehicles/{id}: Updates an existing vehicle.
-- DELETE /vehicles/{id}: Deletes a vehicle by ID.
-
+    ```bash
+    http://localhost:8080/vehicles/{{id}}
+    ```
+- DELETE : Deletes a vehicle by ID.
+    ```bash
+    http://localhost:8080/vehicles/{{id}}
+    ```
+All these endpoints are tested using Postman.
 </details>
 
   
