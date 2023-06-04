@@ -34,6 +34,11 @@ git clone <repository-url>
   mvn install
   ```
 3. Configure the database connection.
+  ```bash
+  spring.datasource.url=jdbc:postgresql://localhost:5432/your-data-base-name
+  spring.datasource.username=username
+  spring.datasource.password=password
+  ```
 4. Build and run the application.
   ```bash
   mvn spring-boot:run
