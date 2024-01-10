@@ -1,8 +1,11 @@
 package com.example.vehiclerental.model;
 
+import com.example.vehiclerental.dto.CarDto;
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "vehicles")
 public class Vehicles {
     @Id
@@ -13,7 +16,20 @@ public class Vehicles {
     private int year;
     private int availability;
     private int price;
+    @Column(columnDefinition = "longblob")
+    private byte[] image;
 
+    public CarDto getCarDto(){
+       CarDto carDto = new CarDto();
+       carDto.setId(id);
+       carDto.setMake(make);
+       carDto.setModel(model);
+       carDto.setYear(year);
+       carDto.setAvailability(availability);
+       carDto.setPrice(price);
+       carDto.setReturnedImage(image);
+       return carDto;
+    }
     public Vehicles(Long id, String make, String model, int year, int availability, int price){
         this.id=id;
         this.make=make;
